@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homepage</title>
+</head>
+<body>
+    <center><h1>If you're feeling useless remember there's a D in Django</h1></center><br><br>
+    <center>
+        <div class="container">
+            <form action="login/", method="POST">
+                {% csrf_token %}
+                <input type="text", name= "username", placeholder="username">
+                <label for="username">Username</label><br><br>
+    
+                <input type="password", name= "password", placeholder="password">
+                <label for="username">Password</label><br>
+                
+                <input type= "submit">
+            </form>
+        </div>
+        </center>
+    <center><h3><a href="register/">Register</a> <a href="faculty_login/">Faculty Login</a></h3></center>
+
+    <h4>Users</h4>
+    {%for user in users %}
+        <li>{{user.email}}</li>
+    {% endfor %}
+</body>
+</html>

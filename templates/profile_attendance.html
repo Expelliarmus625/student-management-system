@@ -1,0 +1,21 @@
+{% extends 'studentAttend_bagl.html'%}
+
+{% block title %}
+    {{user.username}}
+{% endblock %}
+
+{% block body %}
+    {{user.first_name}}
+{% endblock %}
+
+{% block attendance %}
+
+    {%for entry in attendance %}
+        <tr>
+            <td>{{entry.subject_id}}</td>
+            <td>{{entry.attendance}}%</td>    
+        </tr>
+    {%endfor%}
+
+{% endblock %}
+

@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 class Subjects(models.Model):
     subject_name = models.CharField(max_length=128)
     subject_code = models.CharField(max_length=10)
+    year = models.CharField(max_length=10, default='BE')
+    dept = models.CharField(max_length=10, default='ENTC')
     def __str__(self):
         return '%s' % (self.subject_code)
 

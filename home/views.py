@@ -70,4 +70,4 @@ def attend(request):
         return render(request, 'profile_attendance.html',{'user' : user, 'attendance' : attendance})
 
     else:
-        return HttpResponse("It didn't work")
+        return HttpResponse("Don't send me POST requests")

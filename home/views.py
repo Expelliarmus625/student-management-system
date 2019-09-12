@@ -63,9 +63,11 @@ def faculty_login(request):
 
 def attend(request):
     if request.method == 'GET':
-        username = request.POST.get('username')
+        username = request.user.get_username()
         print(username)
         user = User.objects.get(username = username)
         attendance = Attendance.objects.filter(student_id = user.id)
         return render(request, 'profile_attendance.html',{'user' : user, 'attendance' : attendance})
 
+    else:
+        return HttpResponse("It didn't work")
